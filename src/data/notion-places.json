@@ -1,0 +1,506 @@
+[
+  {
+    "id": "32d14702-1936-8002-89b4-dc423b01cfb1",
+    "lugar": "Pinacoteca Departamental",
+    "tipoDeEspacio": "Casa cultural",
+    "tipoDePlan": "Musica, Familiar, Con amigos",
+    "disciplina": "Música en vivo, Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2161194,
+      -77.2785984
+    ]
+  },
+  {
+    "id": "32d14702-1936-800e-a6c1-fcc88e020d1f",
+    "lugar": "Centro Cultural Palatino",
+    "tipoDeEspacio": "Casa cultural",
+    "tipoDePlan": "Con amigos, Solo, Creativo, Musica, Romantico",
+    "disciplina": "Música en vivo, Exposiciones, Talleres, Conferencias",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8012-a446-d3784df97419",
+    "lugar": "Teatro Bethlemitas",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.22743,
+      -77.28947
+    ]
+  },
+  {
+    "id": "32d14702-1936-8015-acb0-c1dadc119750",
+    "lugar": "Rey Lagarto",
+    "tipoDeEspacio": "Bar",
+    "tipoDePlan": "Con amigos",
+    "disciplina": "Música en vivo",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8021-92fd-dae097adbe50",
+    "lugar": "Biblioteca Banco de la República",
+    "tipoDeEspacio": "Biblioteca",
+    "tipoDePlan": "Solo",
+    "disciplina": "Lectura",
+    "organizacion": "Red de Bibliotecas",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2113,
+      -77.27706
+    ]
+  },
+  {
+    "id": "32d14702-1936-8021-ab9b-e344b5fa36c4",
+    "lugar": "Biblioteca Comfamiliar",
+    "tipoDeEspacio": "Biblioteca",
+    "tipoDePlan": "Familiar",
+    "disciplina": "Lectura",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-802b-ab8a-f642483c627d",
+    "lugar": "Casa Paramo",
+    "tipoDeEspacio": "Cafeteria",
+    "tipoDePlan": "Con amigos, Musica, Romantico",
+    "disciplina": "Lectura, Música en vivo, Presentaciones, Talleres",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8031-b59c-f8f760e29eaa",
+    "lugar": "Casona Taminango",
+    "tipoDeEspacio": "Casa cultural",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Exposiciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-803a-9209-d414b19703d3",
+    "lugar": "Moneta y Casa de la Memoria",
+    "tipoDeEspacio": "Cafeteria",
+    "tipoDePlan": "Con amigos, Solo",
+    "disciplina": "Exposiciones, Lectura",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-803c-9eef-efb53a2112bc",
+    "lugar": "Teatro Javeriano",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Solo, Con amigos, Familiar",
+    "disciplina": "Música en vivo, Conferencias",
+    "organizacion": "Colegio San Francisco Javier",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.21524,
+      -77.27703
+    ]
+  },
+  {
+    "id": "32d14702-1936-804b-aca8-e4441bc62882",
+    "lugar": "Parque Rumipamba",
+    "tipoDeEspacio": "Espacio público",
+    "tipoDePlan": "Con amigos",
+    "disciplina": "Economía circular, Música en vivo",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2166658,
+      -77.2814697
+    ]
+  },
+  {
+    "id": "32d14702-1936-804e-918c-e7337ab14108",
+    "lugar": "Museo del Carnaval",
+    "tipoDeEspacio": "Museo",
+    "tipoDePlan": "Solo, Con amigos, Familiar",
+    "disciplina": "Exposiciones, Conferencias",
+    "organizacion": "Corpocarnaval",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.22263,
+      -77.29046
+    ]
+  },
+  {
+    "id": "32d14702-1936-8058-8b39-f8d88f4885e7",
+    "lugar": "Museo Juan Lorenzo Lucero",
+    "tipoDeEspacio": "Museo",
+    "tipoDePlan": "Solo, Con amigos, Familiar",
+    "disciplina": "Exposiciones, Talleres, Conferencias",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.21813,
+      -77.28044
+    ]
+  },
+  {
+    "id": "32d14702-1936-8068-a4b7-d5495dc5ac8b",
+    "lugar": "Starbooks",
+    "tipoDeEspacio": "Cafeteria",
+    "tipoDePlan": "Con amigos",
+    "disciplina": "Lectura",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8078-883d-dafc511d62f8",
+    "lugar": "Casa Cultural Antiguo Liceo",
+    "tipoDeEspacio": "Casa cultural",
+    "tipoDePlan": "Con amigos, Creativo",
+    "disciplina": "Presentaciones, Música en vivo, Exposiciones, Talleres",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8079-96f6-c5a05435c1fa",
+    "lugar": "Casa de la Cultura de Nariño",
+    "tipoDeEspacio": "Casa cultural",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Exposiciones, Talleres, Conferencias, Música en vivo",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.23157,
+      -77.29263
+    ]
+  },
+  {
+    "id": "32d14702-1936-807a-bbb6-f7f901daf770",
+    "lugar": "Museo del Oro Nariño (BanRep)",
+    "tipoDeEspacio": "Museo",
+    "tipoDePlan": "Solo, Con amigos, Familiar",
+    "disciplina": "Exposiciones",
+    "organizacion": "Museo del Oro",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.21153,
+      -77.27662
+    ]
+  },
+  {
+    "id": "32d14702-1936-8086-a33f-c0a1340ab896",
+    "lugar": "Teatro Tragaluz",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Talleres, Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-808d-ab71-f5be8970e932",
+    "lugar": "Escuela Taller de Pasto",
+    "tipoDeEspacio": "Fundación",
+    "tipoDePlan": "Con amigos, Creativo, Solo",
+    "disciplina": "Talleres",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8093-ac93-cb1eb7254d17",
+    "lugar": "Teatro La Comarca",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-8096-99da-fb99315a3440",
+    "lugar": "Teatro La Guagua",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.1961424,
+      -77.2644441
+    ]
+  },
+  {
+    "id": "32d14702-1936-809e-9611-e36311bd1ecd",
+    "lugar": "Bitacora",
+    "tipoDeEspacio": "Cafeteria",
+    "tipoDePlan": "Creativo, Con amigos, Romantico",
+    "disciplina": "",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80a1-8735-d1e925a4fa31",
+    "lugar": "Aleph Teatro",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Con amigos, Solo, Familiar",
+    "disciplina": "Presentaciones",
+    "organizacion": "Aleph",
+    "ubicacion": "",
+    "contacto": "https://www.instagram.com/alephteatro?igsh=MTNvY3Q1Z2RhMGJrNQ==",
+    "coordenadas": [
+      1.21908,
+      -77.28435
+    ]
+  },
+  {
+    "id": "32d14702-1936-80a4-a8eb-f049079436d0",
+    "lugar": "Teatro Imperial",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Solo, Con amigos, Familiar",
+    "disciplina": "Presentaciones, Música en vivo, Conferencias",
+    "organizacion": "Universidad de Nariño",
+    "ubicacion": "",
+    "contacto": "https://www.instagram.com/teatroimperialudenar/",
+    "coordenadas": [
+      1.21449,
+      -77.28219
+    ]
+  },
+  {
+    "id": "32d14702-1936-80a6-a045-f0ff47779f38",
+    "lugar": "Museo Taminango",
+    "tipoDeEspacio": "Museo",
+    "tipoDePlan": "Solo, Con amigos, Familiar",
+    "disciplina": "Exposiciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.21497,
+      -77.28421
+    ]
+  },
+  {
+    "id": "32d14702-1936-80b0-bfaf-ea9ca1f60452",
+    "lugar": "Libreria Camino a casa",
+    "tipoDeEspacio": "Biblioteca",
+    "tipoDePlan": "Con amigos, Familiar, Creativo",
+    "disciplina": "Lectura, Talleres",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80b2-b5bb-f9087d9de663",
+    "lugar": "Museo Talla de Madera Alfonso Zambrano",
+    "tipoDeEspacio": "Museo",
+    "tipoDePlan": "Con amigos, Familiar, Creativo",
+    "disciplina": "Exposiciones",
+    "organizacion": "Familia Zambrano",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80b7-a448-ef5eb1699218",
+    "lugar": "Plaza de Nariño",
+    "tipoDeEspacio": "Espacio público",
+    "tipoDePlan": "Con amigos",
+    "disciplina": "Economía circular, Música en vivo, Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2146113,
+      -77.2782881
+    ]
+  },
+  {
+    "id": "32d14702-1936-80be-8cea-cf12a7018f5f",
+    "lugar": "El gremio",
+    "tipoDeEspacio": "Cafeteria",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Talleres",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80ce-8d73-de91b0f51073",
+    "lugar": "Teatro Colombia",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80ce-95ef-e7c1c4acc1cc",
+    "lugar": "Sala Minima",
+    "tipoDeEspacio": "Teatro",
+    "tipoDePlan": "Creativo, Con amigos",
+    "disciplina": "Presentaciones, Talleres, Conferencias",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80d7-b0d3-c39d3cd91521",
+    "lugar": "Pasaje del Corazón de Jesús",
+    "tipoDeEspacio": "Espacio público",
+    "tipoDePlan": "Con amigos",
+    "disciplina": "Economía circular",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80db-b935-d113bba253c0",
+    "lugar": "Centro Cultural Vía Libre",
+    "tipoDeEspacio": "Casa cultural",
+    "tipoDePlan": "Con amigos, Familiar, Solo",
+    "disciplina": "Talleres, Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "32d14702-1936-80f9-87cf-fbe686fedb1a",
+    "lugar": "El ensayadero",
+    "tipoDeEspacio": "",
+    "tipoDePlan": "Con amigos, Familiar",
+    "disciplina": "Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  },
+  {
+    "id": "33a14702-1936-80ed-9b4f-d5c8e1583aad",
+    "lugar": "Plazoleta de la Catedral",
+    "tipoDeEspacio": "Espacio público",
+    "tipoDePlan": "Familiar, Con amigos",
+    "disciplina": "Economía circular",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2155506,
+      -77.2800184
+    ]
+  },
+  {
+    "id": "33f14702-1936-808a-818a-f8c3f1cf4145",
+    "lugar": "Centro de eventos Andino",
+    "tipoDeEspacio": "Espacio público",
+    "tipoDePlan": "Con amigos",
+    "disciplina": "Economía circular, Presentaciones",
+    "organizacion": "",
+    "ubicacion": "",
+    "contacto": "",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vibrant-purple: #9E58FF;
+  --color-vibrant-pink: #FA3884;
+  --color-vibrant-orange: #F88D2D;
+  --color-vibrant-yellow: #FBD334;
+  --color-vibrant-mint: #0ED797;
+  --color-vibrant-cyan: #26C2FF;
+  --color-vibrant-coral: #FE5C5D;
+  --color-vibrant-cream: #FDF6E3;
+  --color-vibrant-blue: #227EA0;
+}
+

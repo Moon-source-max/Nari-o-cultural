@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "UserEvent": {
+      "title": "UserEvent",
+      "description": "An event submitted by a citizen.",
+      "type": "object",
+      "properties": {
+        "nombre": { "type": "string", "description": "Name of the event" },
+        "descripcion": { "type": "string", "description": "Description of the event" },
+        "organizacion": { "type": "string", "description": "Organization hosting the event" },
+        "redesOWeb": { "type": "string", "description": "Social media or website" },
+        "fechaInicio": { "type": "string", "format": "date-time", "description": "Start date" },
+        "fechaFin": { "type": "string", "format": "date-time", "description": "End date" },
+        "municipio": { "type": "string", "description": "Municipality" },
+        "direccion": { "type": "string", "description": "Address from Google Maps" },
+        "coordenadas": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "tipoDeEvento": { "type": "string" },
+        "imagenPromocional": { "type": "string", "description": "Base64 encoded image string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] }
+      },
+      "required": ["nombre", "descripcion", "fechaInicio", "municipio", "coordenadas"]
+    },
+    "UserSpace": {
+      "title": "UserSpace",
+      "description": "A cultural space or point of interest submitted by a collaborator.",
+      "type": "object",
+      "properties": {
+        "nombreEspacio": { "type": "string", "description": "Name of the space" },
+        "nombreAportante": { "type": "string", "description": "Name of the contributor" },
+        "cedulaAportante": { "type": "string", "description": "ID of the contributor" },
+        "correoAportante": { "type": "string", "description": "Email of the contributor" },
+        "esDuenioOTrabajador": { "type": "string", "description": "Is owner or worker (Sí/No)" },
+        "numeroContactoAportante": { "type": "string", "description": "Contact number" },
+        "tipoDeEspacio": { "type": "string", "description": "Type of space" },
+        "otroTipoDeEspacio": { "type": "string", "description": "Other type of space" },
+        "actividades": { "type": "string", "description": "Activities found here" },
+        "experienciasRecomendadas": { 
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "Recommended experiences"
+        },
+        "redesSociales": { "type": "string", "description": "Social media" },
+        "aptoPara": { 
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "Suitable for"
+        },
+        "fotos": { 
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "Base64 images (max 3)"
+        },
+        "horarios": { "type": "string", "description": "Schedule" },
+        "rangoPrecios": { "type": "string", "description": "Price range" },
+        "ubicacion": { "type": "string", "description": "Address or location description" },
+        "coordenadas": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] }
+      },
+      "required": ["nombreEspacio", "nombreAportante", "cedulaAportante", "correoAportante", "esDuenioOTrabajador", "numeroContactoAportante", "tipoDeEspacio", "ubicacion", "coordenadas"]
+    },
+    "Visita": {
+      "title": "Visita",
+      "description": "User visit to a place or event",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "categoria": { "type": "string" },
+        "tipoEspacio": { "type": "array", "items": { "type": "string" } },
+        "fecha": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "categoria", "fecha"]
+    }
+  },
+  "firestore": {
+    "user_events": {
+      "schema": { "$ref": "#/entities/UserEvent" },
+      "description": "Collection of events submitted by citizens."
+    },
+    "user_spaces": {
+      "schema": { "$ref": "#/entities/UserSpace" },
+      "description": "Collection of cultural spaces submitted by collaborators."
+    },
+    "visitas": {
+      "schema": { "$ref": "#/entities/Visita" },
+      "description": "Collection of user visits for the passport logic."
+    }
+  }
+}

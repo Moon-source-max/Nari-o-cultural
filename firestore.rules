@@ -1,0 +1,141 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: user_events
+    // Document ID: auto-generated
+    // Fields:
+    //   - nombre: string (required, 1-100 chars)
+    //   - descripcion: string (required, 1-1000 chars)
+    //   - organizacion: string (optional, 0-100 chars)
+    //   - redesOWeb: string (optional, 0-200 chars)
+    //   - fechaInicio: string (required, ISO 8601 date string)
+    //   - fechaFin: string (optional, ISO 8601 date string)
+    //   - municipio: string (required, 1-50 chars)
+    //   - direccion: string (optional, 0-200 chars)
+    //   - coordenadas: map (required, {lat: number, lng: number})
+    //   - tipoDeEvento: string (optional, 0-50 chars)
+    //   - createdAt: timestamp (required)
+    //   - status: string (required, 'pending' or 'approved' or 'rejected')
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+       return request.auth != null;
+    }
+
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    function validStringLength(field, minLen, maxLen) {
+      return request.resource.data[field] is string &&
+        request.resource.data[field].size() >= minLen &&
+        request.resource.data[field].size() <= maxLen;
+    }
+
+    function isValidOptionalString(field, minLen, maxLen) {
+      return !(field in request.resource.data) ||
+             (request.resource.data[field] is string &&
+              request.resource.data[field].size() >= minLen &&
+              request.resource.data[field].size() <= maxLen);
+    }
+
+    function isValidDateString(dateStr) {
+      return dateStr is string &&
+        dateStr.matches("^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.*Z?$");
+    }
+
+    function isValidOptionalLongString(field, minLen, maxLen) {
+      return !(field in request.resource.data) ||
+             (request.resource.data[field] is string &&
+              request.resource.data[field].size() >= minLen &&
+              request.resource.data[field].size() <= maxLen);
+    }
+
+    function isValidUserEvent(data) {
+      return hasOnlyAllowedFields(['nombre', 'descripcion', 'organizacion', 'redesOWeb', 'fechaInicio', 'fechaFin', 'municipio', 'direccion', 'coordenadas', 'tipoDeEvento', 'createdAt', 'status', 'imagenPromocional']) &&
+             hasRequiredFields(['nombre', 'descripcion', 'fechaInicio', 'municipio', 'coordenadas', 'createdAt', 'status']) &&
+             validStringLength('nombre', 1, 100) &&
+             validStringLength('descripcion', 1, 1000) &&
+             isValidOptionalString('organizacion', 0, 100) &&
+             isValidOptionalString('redesOWeb', 0, 200) &&
+             isValidDateString(data.fechaInicio) &&
+             (!( 'fechaFin' in data ) || isValidDateString(data.fechaFin)) &&
+             validStringLength('municipio', 1, 50) &&
+             isValidOptionalString('direccion', 0, 200) &&
+             data.coordenadas is map &&
+             data.coordenadas.keys().hasOnly(['lat', 'lng']) &&
+             data.coordenadas.lat is number &&
+             data.coordenadas.lng is number &&
+             isValidOptionalString('tipoDeEvento', 0, 50) &&
+             isValidOptionalLongString('imagenPromocional', 0, 1048487) &&
+             data.createdAt is timestamp &&
+             data.status in ['pending', 'approved', 'rejected'];
+    }
+
+    function isValidUserSpace(data) {
+      return hasOnlyAllowedFields(['nombreEspacio', 'nombreAportante', 'cedulaAportante', 'correoAportante', 'esDuenioOTrabajador', 'numeroContactoAportante', 'tipoDeEspacio', 'otroTipoDeEspacio', 'actividades', 'experienciasRecomendadas', 'redesSociales', 'aptoPara', 'fotos', 'horarios', 'rangoPrecios', 'ubicacion', 'coordenadas', 'createdAt', 'status']) &&
+             hasRequiredFields(['nombreEspacio', 'nombreAportante', 'cedulaAportante', 'correoAportante', 'esDuenioOTrabajador', 'numeroContactoAportante', 'tipoDeEspacio', 'ubicacion', 'coordenadas', 'createdAt', 'status']) &&
+             validStringLength('nombreEspacio', 1, 150) &&
+             validStringLength('nombreAportante', 1, 150) &&
+             validStringLength('cedulaAportante', 1, 50) &&
+             validStringLength('correoAportante', 1, 150) &&
+             validStringLength('esDuenioOTrabajador', 1, 10) &&
+             validStringLength('numeroContactoAportante', 1, 50) &&
+             validStringLength('tipoDeEspacio', 1, 100) &&
+             isValidOptionalString('otroTipoDeEspacio', 0, 100) &&
+             isValidOptionalString('actividades', 0, 1000) &&
+             (!('experienciasRecomendadas' in data) || data.experienciasRecomendadas is list) &&
+             isValidOptionalString('redesSociales', 0, 200) &&
+             (!('aptoPara' in data) || data.aptoPara is list) &&
+             (!('fotos' in data) || (data.fotos is list && data.fotos.size() <= 3)) &&
+             isValidOptionalString('horarios', 0, 200) &&
+             isValidOptionalString('rangoPrecios', 0, 100) &&
+             validStringLength('ubicacion', 1, 200) &&
+             data.coordenadas is map &&
+             data.coordenadas.keys().hasOnly(['lat', 'lng']) &&
+             data.coordenadas.lat is number &&
+             data.coordenadas.lng is number &&
+             data.createdAt is timestamp &&
+             data.status in ['pending', 'approved', 'rejected'];
+    }
+
+    match /user_events/{eventId} {
+      // Allow public read so the events can be displayed on the website
+      allow read: if true;
+      
+      // Allow public create with strict validation to prevent spam/abuse
+      allow create: if isValidUserEvent(request.resource.data) && request.resource.data.status == 'pending';
+      
+      // Only allow updates if authenticated (e.g., admin approval) - for now, deny all updates from client
+      allow update: if false;
+      
+      allow delete: if false;
+    }
+
+    match /user_spaces/{spaceId} {
+      allow read: if true;
+      allow create: if isValidUserSpace(request.resource.data) && request.resource.data.status == 'pending';
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    match /visitas/{visitaId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
