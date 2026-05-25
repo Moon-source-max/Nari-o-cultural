@@ -137,5 +137,8 @@ service cloud.firestore {
       allow read: if true;
       allow write: if true;
     }
+    match /pasaportes/{userId} {
+      allow read, write: if true;
+    }
   }
 }

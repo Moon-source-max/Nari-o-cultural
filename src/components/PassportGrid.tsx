@@ -1,51 +1,47 @@
-import React from 'react';
-import { usePassportLogic, StampData, Category } from '../hooks/usePassportLogic';
-import { 
-  Award, Lock, Coffee, Music, BookOpen, Users, 
-  Landmark, Ticket, Film, Frame, Drama, CupSoda
-} from 'lucide-react';
-import { motion } from 'motion/react';
+import React, { useEffect, useState } from 'react';
+import { getPasaporte, registrarAsistencia, Pasaporte, TROFEOS, Trofeo } from '../lib/pasaporte';
+import { TrofeoModal } from './TrofeoModal';
+import { allEventos } from '../App';
+import InteractiveButton from './InteractiveButton';
 
 interface PassportGridProps {
   userId: string | null;
 }
 
-const CATEGORY_ICONS: Record<Category, React.ElementType> = {
-  gastronomia: CupSoda,
-  museos: Landmark,
-  musica: Music,
-  editorial: BookOpen,
-  comunidad: Users,
-  culturales: Ticket,
-  cineforos: Film,
-  exposiciones: Frame,
-  teatro: Drama,
-  cafeterias: Coffee,
-};
-
-const CATEGORY_COLORS: Record<Category, string> = {
-  gastronomia: 'text-orange-500 bg-orange-100 border-orange-200',
-  museos: 'text-stone-500 bg-stone-100 border-stone-200',
-  musica: 'text-purple-500 bg-purple-100 border-purple-200',
-  editorial: 'text-blue-500 bg-blue-100 border-blue-200',
-  comunidad: 'text-green-500 bg-green-100 border-green-200',
-  culturales: 'text-rose-500 bg-rose-100 border-rose-200',
-  cineforos: 'text-indigo-500 bg-indigo-100 border-indigo-200',
-  exposiciones: 'text-cyan-500 bg-cyan-100 border-cyan-200',
-  teatro: 'text-red-500 bg-red-100 border-red-200',
-  cafeterias: 'text-amber-700 bg-amber-100 border-amber-200',
-};
-
-const LEVEL_COLORS = {
-  Bronce: 'text-amber-600 bg-amber-100 border-amber-300',
-  Plata: 'text-gray-500 bg-gray-100 border-gray-300',
-  Oro: 'text-yellow-600 bg-yellow-100 border-yellow-400',
-};
-
 export default function PassportGrid({ userId }: PassportGridProps) {
-  const { stamps, loading } = usePassportLogic(userId);
+  const [pasaporte, setPasaporte] = useState<Pasaporte | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [trofeoReciente, setTrofeoReciente] = useState<Trofeo | null>(null);
+  
+  const uid = userId || 'demo-user'; // fallback to demo user
 
-  if (loading) {
+  useEffect(() => {
+    getPasaporte(uid).then(p => {
+      setPasaporte(p);
+      setLoading(false);
+    });
+  }, [uid]);
+
+  const handleRegistrar = async (eventoData: any) => {
+    if (!pasaporte) return;
+    
+    // Transform the event data into what the passport logic expects
+    const evento = {
+      id: eventoData.nombre_evento.replace(/\s+/g, '-').toLowerCase() + '-' + eventoData.municipio,
+      nombre: eventoData.nombre_evento,
+      tipo: eventoData.categoria?.toLowerCase() || 'general'
+    };
+
+    const result = await registrarAsistencia(pasaporte, evento);
+    setPasaporte(result.pasaporteActualizado);
+    
+    if (result.trofeosNuevos.length > 0) {
+      // Show the first new trophy
+      setTrofeoReciente(result.trofeosNuevos[0]);
+    }
+  };
+
+  if (loading || !pasaporte) {
     return (
       <div className="flex justify-center items-center h-48 w-full">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--color-vibrant-coral)]"></div>
@@ -61,68 +57,78 @@ export default function PassportGrid({ userId }: PassportGridProps) {
             <span className="text-2xl">👤</span>
           </div>
           <div>
-            <h3 className="font-bold text-xl text-gray-800">Pasaporte Ciudadano</h3>
-            <p className="text-sm text-gray-500 leading-tight">Colecciona sellos verificados asistiendo a eventos y visitando lugares locales.</p>
+            <h3 className="font-bold text-xl text-gray-800">Pasaporte Cultural</h3>
+            <p className="text-sm text-gray-500 font-bold">Experiencia: <span className="text-[var(--color-vibrant-purple)]">{pasaporte.xp} XP</span></p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {stamps.map((stamp) => (
-            <StampCard key={stamp.category} stamp={stamp} />
-          ))}
+        <div className="mb-10">
+          <h4 className="font-bold text-[var(--color-vibrant-blue)] mb-4">Tus Trofeos Obtenidos</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {TROFEOS.map(t => {
+              const unlocked = pasaporte.trofeosGanados.includes(t.id);
+              return (
+                <div key={t.id} className={`relative p-4 rounded-2xl border-2 flex flex-col items-center justify-center transition-all duration-300 ${unlocked ? 'bg-white shadow-sm border-gray-100' : 'bg-gray-50 border-transparent opacity-60'}`}>
+                  <div className="text-4xl mb-3">{t.icono}</div>
+                  <h5 className="font-bold text-center text-sm mb-1 text-gray-800">{t.nombre}</h5>
+                  <p className="text-[10px] text-center text-gray-500 leading-snug">{t.descripcion}</p>
+                  
+                  {unlocked ? (
+                    <span className="mt-3 text-[10px] font-bold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">
+                      ¡Obtenido!
+                    </span>
+                  ) : (
+                    <span className="mt-3 text-[10px] font-bold bg-gray-200 text-gray-600 px-2.5 py-1 rounded-full">
+                      Bloqueado
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-[var(--color-vibrant-blue)] mb-2">Asistir a Eventos</h4>
+          <p className="text-xs text-gray-500 mb-4">Haz clic en los eventos para registrar tu asistencia y ganar XP. (Entorno de prueba)</p>
+          
+          <div className="space-y-3">
+            {allEventos.slice(0, 5).map((ev, idx) => {
+              const eventoId = ev.nombre_evento.replace(/\s+/g, '-').toLowerCase() + '-' + ev.municipio;
+              const yaAsistio = pasaporte.eventosAsistidos.some(e => e.id === eventoId);
+              
+              return (
+                <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between bg-gray-50/50 border border-gray-100 p-4 rounded-xl hover:bg-gray-100/50 transition-colors gap-3">
+                  <div>
+                    <p className="font-bold text-sm text-gray-800 leading-tight mb-1">{ev.nombre_evento}</p>
+                    <p className="text-xs text-gray-500 flex items-center gap-2">
+                       <span className="bg-gray-200 px-2 py-0.5 rounded-md">{ev.categoria}</span> 
+                       {ev.municipio}
+                    </p>
+                  </div>
+                  <div>
+                    {yaAsistio ? (
+                      <span className="text-xs font-bold text-green-600 bg-green-50 px-3 py-1.5 rounded-full flex justify-center items-center">
+                         ✓ Asistido
+                      </span>
+                    ) : (
+                      <InteractiveButton 
+                        color="var(--color-vibrant-coral)" 
+                        className="w-full sm:w-auto !text-xs py-2 px-4 shadow-sm"
+                        onClick={() => handleRegistrar(ev)}
+                      >
+                        Registrar Asistencia
+                      </InteractiveButton>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      <TrofeoModal trofeo={trofeoReciente} onClose={() => setTrofeoReciente(null)} />
     </div>
-  );
-}
-
-function StampCard({ stamp }: { stamp: StampData }) {
-  const Icon = CATEGORY_ICONS[stamp.category];
-  const colorClass = CATEGORY_COLORS[stamp.category];
-  const isLocked = !stamp.isUnlocked;
-
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className={`relative p-4 rounded-2xl border-2 flex flex-col items-center justify-center transition-all duration-300 ${isLocked ? 'bg-[var(--color-vibrant-cream)] border-transparent opacity-90' : 'bg-white shadow-sm border-gray-100'}`}
-    >
-      <div className="absolute top-3 right-3">
-        {isLocked ? (
-          <Lock className="w-4 h-4 text-[#c5b58e]" />
-        ) : (
-          <div className={`flex items-center gap-1 px-2 py-1 rounded-full border text-[10px] font-bold ${LEVEL_COLORS[stamp.currentLevel as keyof typeof LEVEL_COLORS]}`}>
-            <Award className="w-3 h-3" />
-            {stamp.currentLevel}
-          </div>
-        )}
-      </div>
-
-      <div className={`w-16 h-16 mt-4 opacity-90 rounded-full flex items-center justify-center border-4 border-white shadow-sm mb-3 ${isLocked ? 'bg-[#efe5ce] text-[#b8a77f]' : colorClass.split(' ')[1] + ' ' + colorClass.split(' ')[0]}`}>
-        <Icon className="w-8 h-8" />
-      </div>
-
-      <h4 className={`font-bold text-center text-sm leading-tight mb-1 ${isLocked ? 'text-[#968352]' : 'text-gray-900'}`}>{stamp.details.title}</h4>
-      <p className={`text-[10px] text-center leading-snug mb-3 min-h-[30px] ${isLocked ? 'text-[#a89566]' : 'text-gray-500'}`}>{stamp.details.description}</p>
-      
-      {!isLocked && stamp.nextLevelVisitsRequired === null ? (
-        <p className="text-xs text-yellow-600 font-bold mb-3 px-2 py-1 bg-yellow-50 rounded-md">¡Nivel Máximo Alcanzado!</p>
-      ) : (
-        <p className={`text-[11px] font-bold mb-2 ${isLocked ? 'text-[#b09e70]' : 'text-gray-600'}`}>
-          {stamp.visits} {stamp.visits === 1 ? 'visita' : 'visitas'}
-          {stamp.nextLevelVisitsRequired && ` / ${stamp.nextLevelVisitsRequired} sig. nivel`}
-        </p>
-      )}
-
-      {/* Progress Bar */}
-      {stamp.nextLevelVisitsRequired !== null && (
-        <div className={`w-full h-2 rounded-full overflow-hidden mt-auto ${isLocked ? 'bg-[#e2d6ba]' : 'bg-gray-100'}`}>
-          <div 
-            className={`h-full rounded-full transition-all duration-1000 ${isLocked ? 'bg-[#c5b58e]' : 'bg-gradient-to-r from-blue-400 to-blue-500'}`}
-            style={{ width: `${stamp.progress * 100}%` }}
-          />
-        </div>
-      )}
-    </motion.div>
   );
 }
