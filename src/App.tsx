@@ -38,8 +38,8 @@ const allEventos = [
     fecha_fin: '',
     categoria: e.tipoDeEvento,
     coordenadas: e.coordenadas ? { lat: e.coordenadas[0], lng: e.coordenadas[1] } : null,
-    organizacion: e.organizacion,
-    redesOWeb: '',
+    organizacion: (e as any).organizacion || '',
+    redesOWeb: (e as any).redesOWeb || '',
     descripcion: (e as any).descripcion || '',
     imagen: (e as any).imagen || ''
   }))
@@ -60,11 +60,12 @@ const LayeredIcon = ({ icon: Icon, className = "w-6 h-6", color1 = "text-[var(--
 );
 
 import PassportGrid from './components/PassportGrid';
+import CalendarView from './components/CalendarView';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<'landing' | 'app'>('landing');
   const [activeTab, setActiveTab] = useState<'eventos' | 'espacios' | 'pasaporte'>('eventos');
-  const [eventTypeFilter, setEventTypeFilter] = useState<'todos' | 'proximos'>('todos');
+  const [eventTypeFilter, setEventTypeFilter] = useState<'todos' | 'proximos' | 'calendario'>('todos');
   const [eventos, setEventos] = useState(allEventos);
   const [selectedMunicipio, setSelectedMunicipio] = useState<string | null>(null);
   const [selectedItem, setSelectedItem] = useState<any | null>(null);
@@ -198,7 +199,7 @@ export default function App() {
 
         <div className="flex items-center gap-3 w-full md:w-auto">
           {activeTab !== 'pasaporte' && (
-            <div className="relative flex-1 md:w-64">
+            <div className="relative flex-1 md:w-64 hidden md:block">
               <input 
                 type="text" 
                 placeholder={activeTab === 'eventos' ? "Buscar eventos..." : "Buscar espacios..."}
@@ -244,15 +245,37 @@ export default function App() {
               
               {activeTab === 'eventos' ? (
                 <>
-                  <div className="p-4 border-b border-gray-200 flex justify-center bg-white shadow-sm z-10">
-                    <div className="bg-gray-100 p-1.5 rounded-full flex w-full max-w-sm relative">
-                      <div className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white rounded-full shadow-sm transition-transform duration-300 ease-in-out ${eventTypeFilter === 'todos' ? 'translate-x-0' : 'translate-x-[calc(100%+12px)]'}`} />
-                      <button onClick={() => setEventTypeFilter('todos')} className={`flex-1 py-2 text-sm font-bold rounded-full z-10 transition-colors ${eventTypeFilter === 'todos' ? 'text-[var(--color-vibrant-blue)]' : 'text-gray-500 hover:text-gray-700'}`}>Permanentes</button>
-                      <button onClick={() => setEventTypeFilter('proximos')} className={`flex-1 py-2 text-sm font-bold rounded-full z-10 transition-colors ${eventTypeFilter === 'proximos' ? 'text-[var(--color-vibrant-blue)]' : 'text-gray-500 hover:text-gray-700'}`}>Próximos</button>
+                  <div className="p-2 border-b border-gray-200 flex justify-center bg-white shadow-sm z-10 w-full overflow-x-auto">
+                    <div className="bg-gray-100 p-1 rounded-full flex relative min-w-max w-full">
+                      <div 
+                        className={`absolute top-1 bottom-1 bg-white rounded-full shadow-sm transition-transform duration-300 ease-in-out hidden md:block`}
+                        style={{
+                          width: 'calc(50% - 4px)',
+                          transform: `translateX(${eventTypeFilter === 'todos' || eventTypeFilter === 'calendario' ? '0' : '100%'})`
+                        }}
+                      />
+                      <div 
+                        className={`absolute top-1 bottom-1 bg-white rounded-full shadow-sm transition-transform duration-300 ease-in-out md:hidden`}
+                        style={{
+                          width: 'calc(33.333% - 2px)',
+                          transform: `translateX(${eventTypeFilter === 'todos' ? '0' : eventTypeFilter === 'proximos' ? '100%' : '200%'})`
+                        }}
+                      />
+                      <button onClick={() => setEventTypeFilter('todos')} className={`flex-1 px-4 py-1.5 text-sm font-bold rounded-full z-10 transition-colors ${eventTypeFilter === 'todos' ? 'text-[var(--color-vibrant-blue)]' : 'text-gray-500 hover:text-gray-700'}`}>Permanentes</button>
+                      <button onClick={() => setEventTypeFilter('proximos')} className={`flex-1 px-4 py-1.5 text-sm font-bold rounded-full z-10 transition-colors ${eventTypeFilter === 'proximos' ? 'text-[var(--color-vibrant-blue)]' : 'text-gray-500 hover:text-gray-700'}`}>Próximos</button>
+                      <button onClick={() => setEventTypeFilter('calendario')} className={`flex-1 px-4 py-1.5 text-sm font-bold rounded-full z-10 transition-colors md:hidden ${eventTypeFilter === 'calendario' ? 'text-[var(--color-vibrant-blue)]' : 'text-gray-500 hover:text-gray-700'}`}>Calendario</button>
                     </div>
                   </div>
 
-                  {eventTypeFilter === 'proximos' ? (
+                  {eventTypeFilter === 'calendario' ? (
+                    <div className="flex-1 overflow-x-hidden flex flex-col w-full max-w-[100vw] md:hidden">
+                      <CalendarView 
+                        permanentes={allEventos} 
+                        proximos={upcomingEvents} 
+                        onSelectItem={(item) => setSelectedItem({ ...item, type: 'evento', nombre_evento: item.nombre || item.nombre_evento })}
+                      />
+                    </div>
+                  ) : eventTypeFilter === 'proximos' ? (
                     <div className="flex-1 overflow-x-hidden overflow-y-auto pb-24 md:pb-0">
                       <UpcomingEvents onSelectItem={(item) => setSelectedItem({ ...item, type: 'evento', nombre_evento: item.nombre })} />
                     </div>
@@ -518,80 +541,35 @@ export default function App() {
                   </button>
                 </div>
               </div>
-
-              <div className="hidden md:flex flex-1 overflow-y-auto p-4 space-y-4">
-                {filteredPlaces.length > 0 ? (
-                  filteredPlaces.map((place: any, idx: number) => (
-                    <div key={idx} className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-200 group">
-                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                        {place.lugar || 'Espacio sin nombre'}
-                      </h3>
-                      
-                      <div className="space-y-2 text-sm text-gray-600">
-                        {place.ubicacion && (
-                          <div className="flex items-start">
-                            <MapPin className="w-4 h-4 mr-2 mt-0.5 text-gray-400 shrink-0" />
-                            <span>{place.ubicacion}</span>
-                          </div>
-                        )}
-                        {place.tipoDeEspacio && (
-                          <div className="flex items-center">
-                            <Tag className="w-4 h-4 mr-2 text-gray-400 shrink-0" />
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-800">
-                              {place.tipoDeEspacio}
-                            </span>
-                          </div>
-                        )}
-                        {place.tipoDePlan && (
-                          <div className="flex items-center">
-                            <Calendar className="w-4 h-4 mr-2 text-gray-400 shrink-0" />
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
-                              {place.tipoDePlan}
-                            </span>
-                          </div>
-                        )}
-                        {place.disciplina && (
-                          <div className="flex items-center">
-                            <span className="text-xs text-gray-500">
-                              <strong>Disciplina:</strong> {place.disciplina}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                      <button 
-                        onClick={() => setSelectedItem({ ...place, type: 'espacio' })}
-                        className="mt-3 w-full py-1.5 text-xs font-medium text-purple-600 border border-purple-100 rounded-lg hover:bg-purple-50 transition-colors"
-                      >
-                        Ver detalles
-                      </button>
-                    </div>
-                  ))
-                ) : (
-                  <div className="text-center py-10 text-gray-500">
-                    <p>No se encontraron espacios culturales.</p>
-                    <p className="text-xs mt-2">Intenta cambiar los filtros o asegúrate de haber ejecutado <code>npm run fetch-notion</code>.</p>
-                  </div>
-                )}
-              </div>
             </>
           )}
         </aside>
 
         {/* Map Area */}
-        <section className={`relative bg-gray-100 p-0 md:p-4 w-full md:flex-1 order-1 md:order-2 overflow-hidden ${activeTab === 'eventos' ? 'hidden md:block md:h-full' : 'flex-1 h-full md:h-full'}`}>
-           <Map 
-             activeTab={activeTab}
-             eventos={filteredEvents} 
-             espacios={filteredPlaces.map((p: any) => ({
-               ...p,
-               coordenadas: p.coordenadas ? { lat: p.coordenadas[0], lng: p.coordenadas[1] } : null
-             }))}
-             selectedMunicipio={selectedMunicipio}
-             onSelectMunicipio={setSelectedMunicipio}
-             onSelectItem={setSelectedItem}
-             userEvents={upcomingEvents}
-             focusLocation={focusLocation}
-           />
+        <section className={`relative p-0 md:p-4 w-full md:flex-1 order-1 md:order-2 overflow-hidden ${activeTab === 'eventos' ? 'hidden md:block md:h-full bg-[var(--color-vibrant-cream)]' : 'flex-1 h-full md:h-full bg-gray-100'}`}>
+           {activeTab === 'eventos' ? (
+             <div className="h-full w-full bg-white md:rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col">
+               <CalendarView 
+                 permanentes={allEventos} 
+                 proximos={upcomingEvents} 
+                 onSelectItem={(item) => setSelectedItem({ ...item, type: 'evento', nombre_evento: item.nombre || item.nombre_evento })}
+               />
+             </div>
+           ) : (
+             <Map 
+               activeTab={activeTab}
+               eventos={filteredEvents} 
+               espacios={filteredPlaces.map((p: any) => ({
+                 ...p,
+                 coordenadas: p.coordenadas ? { lat: p.coordenadas[0], lng: p.coordenadas[1] } : null
+               }))}
+               selectedMunicipio={selectedMunicipio}
+               onSelectMunicipio={setSelectedMunicipio}
+               onSelectItem={setSelectedItem}
+               userEvents={upcomingEvents}
+               focusLocation={focusLocation}
+             />
+           )}
         </section>
           </>
         )}

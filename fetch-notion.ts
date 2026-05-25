@@ -147,6 +147,7 @@ async function fetchDatabase(databaseId: string, type: 'espacios' | 'eventos_pas
           tipoDeEvento: getSelect(props['Tipo de Evento']),
           fechas: getRichText(props['Fechas']),
           organizacion: getRichText(props['Organización']),
+          redesOWeb: getUrl(props['Redes o web']),
           descripcion: getRichText(props['Descripción']) || getRichText(props['Descripcion']) || getRichText(props['Descripción de eventos anuales']) || getRichText(props['Descripcion de eventos anuales']) || getRichText(props['Descripción del evento']) || getRichText(props['Descripcion del evento']),
           municipio: ciudad,
           coordenadas: coordenadas

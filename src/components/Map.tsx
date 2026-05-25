@@ -129,7 +129,7 @@ const getCategoryColor = (categoria: string) => {
 
 const createCustomIcon = (color: string) => {
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.3));">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="${color}" stroke="none" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));">
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
       <circle cx="12" cy="10" r="3" fill="${color === '#FFFFFF' ? '#000000' : '#FFFFFF'}"/>
     </svg>

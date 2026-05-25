@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, MapPin, Calendar, Tag, ExternalLink, Clock, Globe, Info } from 'lucide-react';
+import { X, MapPin, Calendar, Tag, ExternalLink, Clock, Globe, Info, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { format, parseISO } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -96,7 +96,7 @@ export default function DetailModal({ item, onClose }: DetailModalProps) {
 
                 {!isEvento && item.tipoDePlan && (
                   <div className="flex items-start">
-                    <Clock className="w-5 h-5 mr-3 shrink-0 text-purple-500" />
+                    <Users className="w-5 h-5 mr-3 shrink-0 text-purple-500" />
                     <div>
                       <p className="text-sm font-semibold text-gray-900">Tipo de Plan</p>
                       <p className="text-sm text-gray-600">{item.tipoDePlan}</p>

@@ -1,41 +1,30 @@
 [
   {
-    "id": "32d14702-1936-8040-9376-e4a02e50c856",
-    "nombre": "Carnaval del fuego",
-    "tipoDeEvento": "Carnaval",
-    "fechas": "12 al 17 de febrero",
-    "organizacion": "Alcaldía de Tumaco",
-    "descripcion": "",
-    "municipio": "Tumaco",
+    "id": "33f14702-1936-80ed-aa40-fbc1a5054e64",
+    "nombre": "Senda de Fé, Semana Santa",
+    "tipoDeEvento": "",
+    "fechas": "",
+    "organizacion": "Diocesis de Pasto",
+    "redesOWeb": "",
+    "descripcion": "La Senda de la Fe es una solemne ruta turística y religiosa que transforma el centro histórico de Pasto durante los días santos. Esta experiencia invita a recorrer los majestuosos templos coloniales de la conocida \"Ciudad Teológica\", destacando su invaluable patrimonio arquitectónico, artístico y espiritual. El circuito cultural se complementa con solemnes procesiones, magnas exposiciones de arte sacro y hermosos conciertos de música clásica y coral en escenarios patrimoniales de libre acceso. Es una manifestación de fervor colectivo que fusiona la devoción con el turismo, ofreciendo un ambiente de recogimiento y mística ideal para que propios y visitantes descubran la profunda herencia cultural, las tradiciones vivas y la riqueza arquitectónica de la capital nariñense.",
+    "municipio": "Pasto",
     "coordenadas": [
-      1.8062887,
-      -78.7649814
+      1.2140275,
+      -77.2785096
     ]
   },
   {
-    "id": "32d14702-1936-8052-87e2-ffcd9dfea169",
-    "nombre": "Carnaval Multicolor de la Frontera",
-    "tipoDeEvento": "Carnaval",
-    "fechas": "2 a 6 de enero",
-    "organizacion": "Alcaldia de Ipiales",
-    "descripcion": "",
+    "id": "33a14702-1936-80fc-934f-f33179b7fe31",
+    "nombre": "Semana Santa Santuario Las Lajas",
+    "tipoDeEvento": "",
+    "fechas": "Abril",
+    "organizacion": "Diocesis de Ipiales",
+    "redesOWeb": "",
+    "descripcion": "La Semana Santa en el Santuario de las Lajas, ubicado en Ipiales, es uno de los acontecimientos litúrgicos y de peregrinación más solemnes de Colombia. Miles de devotos y turistas de todo el mundo se dan cita en el imponente cañón del río Guáitara para participar en las tradicionales procesiones, viacrucis y actos religiosos dentro de esta joya arquitectónica del neogótico. El templo se convierte en un majestuoso epicentro de fe, reflexión y recogimiento espiritual. Los asistentes disfrutan de un ambiente místico que se complementa con la espectacular iluminación nocturna del santuario y la imponencia del paisaje andino, logrando una experiencia conmovedora que fusiona la devoción con el asombro monumental.",
     "municipio": "Ipiales",
     "coordenadas": [
-      0.8236934,
-      -77.6349296
-    ]
-  },
-  {
-    "id": "32d14702-1936-8064-9642-ea74b53b6d4b",
-    "nombre": "Festival del queso",
-    "tipoDeEvento": "Gastronomico",
-    "fechas": "Octubre",
-    "organizacion": "Alcaldía de Guachucal",
-    "descripcion": "",
-    "municipio": "Guachucal",
-    "coordenadas": [
-      0.9573434,
-      -77.7333581
+      0.8236501,
+      -77.6348556
     ]
   },
   {
@@ -44,7 +33,8 @@
     "tipoDeEvento": "Cultural",
     "fechas": "Junio",
     "organizacion": "",
-    "descripcion": "",
+    "redesOWeb": "",
+    "descripcion": "La Fiesta del Sol o Inti Raymi es una celebración de agradecimiento donde comunidades indígenas, campesinos y visitantes se unen para honrar a la Madre Tierra y al Padre Sol por las cosechas y la prosperidad. El encuentro se llena de vida con rituales de purificación, música autóctona y danzas en círculos donde los participantes zapatean con fuerza para mantener la tierra despierta. Durante los festejos se comparten bebidas tradicionales como el chanchuco y la chicha mascada, además de llamativos castillos adornados con los mejores productos de la región y el infaltable cuy asado. Es una experiencia cultural y turística que invita a conocer de cerca la fertilidad, los saberes y las costumbres vivas de los pueblos andinos.",
     "municipio": "Nariño",
     "coordenadas": [
       1.2906755,
@@ -57,11 +47,40 @@
     "tipoDeEvento": "Gastronomico",
     "fechas": "Agosto",
     "organizacion": "Alcaldía de Berruecos",
-    "descripcion": "",
+    "redesOWeb": "",
+    "descripcion": "El Festival de la Naranja y la Mandarina es una vibrante celebración que destaca la importancia y riqueza de los cultivos cítricos en la vereda El Empate, dentro del municipio de Arboleda. Este encuentro reúne a propios y visitantes en torno a una variada oferta gastronómica, coloridas muestras artesanales y diversas expresiones culturales que reflejan la alegría de la comunidad. Los asistentes pueden deleitarse con refrescantes jugos naturales elaborados directamente de las cosechas, un plan ideal para disfrutar del característico clima cálido de la zona. Es el escenario perfecto para saborear la tradición agrícola nariñense, apoyar a los productores locales y vivir una experiencia festiva que exalta la hospitalidad de su gente.",
     "municipio": "El Empate",
     "coordenadas": [
       1.4518964,
       -77.117965
+    ]
+  },
+  {
+    "id": "32d14702-1936-8040-9376-e4a02e50c856",
+    "nombre": "Carnaval del fuego",
+    "tipoDeEvento": "Carnaval",
+    "fechas": "12 al 17 de febrero",
+    "organizacion": "Alcaldía de Tumaco",
+    "redesOWeb": "",
+    "descripcion": "El Carnaval del Fuego en Tumaco es una de las manifestaciones culturales más grandes de la Costa Pacífica, inundando la región con días de cantos, comparsas y bailes. Esta gran festividad brilla con su icónico desfile náutico, donde coloridas embarcaciones con música en vivo navegan el mar. El encuentro cumbre es la ‘Noche Afro’, un despliegue artístico que exalta la riqueza dancística y oral tradicional al ritmo de la marimba, bombos y cununos. Además, los desfiles cuentan con la presencia de los ‘cucuruchos’, personajes míticos que representan las creencias ancestrales. Es una experiencia vibrante en tierra y mar que celebra y enaltece el orgullo del legado de los pueblos negros.",
+    "municipio": "Tumaco",
+    "coordenadas": [
+      1.8062887,
+      -78.7649814
+    ]
+  },
+  {
+    "id": "32d14702-1936-8064-9642-ea74b53b6d4b",
+    "nombre": "Festival del queso",
+    "tipoDeEvento": "Gastronomico",
+    "fechas": "Octubre",
+    "organizacion": "Alcaldía de Guachucal",
+    "redesOWeb": "",
+    "descripcion": "",
+    "municipio": "Guachucal",
+    "coordenadas": [
+      0.9573434,
+      -77.7333581
     ]
   },
   {
@@ -70,37 +89,26 @@
     "tipoDeEvento": "Musical",
     "fechas": "Octubre",
     "organizacion": "Alcaldia de Ipiales",
-    "descripcion": "",
+    "redesOWeb": "",
+    "descripcion": "Este prestigioso festival es el encuentro de música de cuerda más importante del suroccidente colombiano, celebrado en Ipiales. El evento rinde homenaje a la tradición romántica al reunir en un mismo escenario a los mejores tríos de guitarras y requintos de nivel local, nacional e internacional. El espacio público de la ciudad fronteriza se transforma en una gran serenata colectiva donde las armonías vocales y las melodías nostálgicas deleitan a miles de melómanos y turistas. Es una experiencia cultural sublime que preserva el patrimonio sonoro de la región, consolidando a la frontera como la capital de la bohemia y el talento interpretativo en el sur del país.",
     "municipio": "Ipiales",
     "coordenadas": [
-      0.8236934,
-      -77.6349296
+      0.8236501,
+      -77.6348556
     ]
   },
   {
-    "id": "33a14702-1936-80fc-934f-f33179b7fe31",
-    "nombre": "Semana Santa Santuario Las Lajas",
-    "tipoDeEvento": "",
-    "fechas": "Abril",
-    "organizacion": "Diocesis de Ipiales",
-    "descripcion": "",
+    "id": "32d14702-1936-8052-87e2-ffcd9dfea169",
+    "nombre": "Carnaval Multicolor de la Frontera",
+    "tipoDeEvento": "Carnaval",
+    "fechas": "2 a 6 de enero",
+    "organizacion": "Alcaldia de Ipiales",
+    "redesOWeb": "",
+    "descripcion": "El Carnaval Multicolor de la Frontera es la fiesta cultural más importante de Ipiales, uniendo el arte y la tradición en el sur de Nariño. Este magno evento transforma las calles de la ciudad fronteriza en un vibrante escenario donde monumentales carrozas, murgas musicales y coloridas comparsas de danza deleitan a miles de asistentes. Al ser una celebración en la frontera, propicia un encuentro binacional único que hermana a colombianos y ecuatorianos a través del juego, la música y la lúdica popular. Es una experiencia festiva inolvidable que exalta la creatividad de los artesanos locales, convirtiendo el espacio público en una gran galería viva que celebra la diversidad y la identidad regional.",
     "municipio": "Ipiales",
     "coordenadas": [
-      0.8236934,
-      -77.6349296
-    ]
-  },
-  {
-    "id": "33f14702-1936-80ed-aa40-fbc1a5054e64",
-    "nombre": "Senda de Fé, Semana Santa",
-    "tipoDeEvento": "",
-    "fechas": "",
-    "organizacion": "Diocesis de Pasro",
-    "descripcion": "",
-    "municipio": "Pasto",
-    "coordenadas": [
-      1.2140275,
-      -77.2785096
+      0.8236501,
+      -77.6348556
     ]
   }
 ]

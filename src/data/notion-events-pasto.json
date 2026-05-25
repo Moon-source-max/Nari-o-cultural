@@ -1,43 +1,15 @@
 [
   {
-    "id": "32d14702-1936-8010-8024-c0437500f5c1",
-    "nombre": "Arcoiris en el asfalto",
-    "tipoDeEvento": "Cultural",
-    "fechas": "28 de diciembre",
-    "organizacion": "",
-    "redesOWeb": "",
-    "descripcion": "",
-    "coordenadas": [
-      1.2140275,
-      -77.2785096
-    ],
-    "municipio": "Pasto"
-  },
-  {
     "id": "32d14702-1936-8023-a4e4-c7234bd6ffc9",
     "nombre": "PastoJazz: Músicas del mundo",
     "tipoDeEvento": "Músical",
     "fechas": "24 y 25 de septiembre",
     "organizacion": "Pasto Jazz",
     "redesOWeb": "https://pastojazz.com/",
-    "descripcion": "",
+    "descripcion": "El Festival Internacional Pasto Jazz se consolida como el evento cumbre para los amantes del género y las músicas del mundo en el suroccidente colombiano. Este encuentro reúne en escena a virtuosos intérpretes locales, nacionales e internacionales, ofreciendo una selecta programación que explora desde el jazz clásico hasta fusiones contemporáneas y ritmos experimentales. Más allá de los conciertos y las noches de improvisación en vivo, el festival enriquece la escena local abriendo espacios de formación académica con talleres y clases magistrales dictadas por expertos. Es una experiencia sonora de alto nivel que transforma la atmósfera de la ciudad, propiciando el diálogo cultural y deleitando a un público diverso en un ambiente vibrante y sofisticado.",
     "coordenadas": [
       1.21524,
       -77.27703
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-802b-8a08-db55791f6163",
-    "nombre": "Pasto en salsa",
-    "tipoDeEvento": "Músical",
-    "fechas": "24 de junio",
-    "organizacion": "Alcaldía de Pasto",
-    "redesOWeb": "",
-    "descripcion": "",
-    "coordenadas": [
-      1.21485,
-      -77.27776
     ],
     "municipio": "Pasto"
   },
@@ -48,94 +20,10 @@
     "fechas": "23 al 27 de septiembre",
     "organizacion": "FICPA",
     "redesOWeb": "https://www.ficpa.co/",
-    "descripcion": "",
+    "descripcion": "El Festival Internacional de Cine de Pasto (FICPA) se consolida como el principal referente cinematográfico de Nariño, impulsando el fortalecimiento de la cultura audiovisual en el suroccidente de Colombia. Este festival propicia un espacio incluyente y de gran cobertura para la apreciación del cine regional, nacional e internacional a través de diversas muestras artísticas. Más allá de las pantallas, el evento se enfoca en la formación pedagógica de realizadores y la creación de nuevos públicos apasionados por el séptimo arte. Al conectar el talento local con la escena global, el FICPA promueve el desarrollo de la industria cinematográfica de la región, convirtiendo a la ciudad en un escenario vivo de encuentro visual, inclusión y diversidad cultural.",
     "coordenadas": [
       1.2140275,
       -77.2785096
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-8082-ad56-ec6f79234254",
-    "nombre": "Carnaval de negros y blancos",
-    "tipoDeEvento": "Carnaval",
-    "fechas": "2 al 7 de enero",
-    "organizacion": "",
-    "redesOWeb": "https://corpocarnaval.com/",
-    "descripcion": "",
-    "coordenadas": [
-      1.21099,
-      -77.27802
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-808e-8606-e1f59cde0a0e",
-    "nombre": "Festival internacional de teatro",
-    "tipoDeEvento": "Teatro",
-    "fechas": "1 al 7 de septiembre",
-    "organizacion": "Aleph Teatro",
-    "redesOWeb": "https://www.facebook.com/festivalinternacionaldeteatrodepasto/?locale=es_LA",
-    "descripcion": "",
-    "coordenadas": [
-      1.21908,
-      -77.28435
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-80a4-b8f0-fee4d0057a8d",
-    "nombre": "Venus Fest",
-    "tipoDeEvento": "Músical",
-    "fechas": "24 al 30 de noviembre",
-    "organizacion": "",
-    "redesOWeb": "https://www.instagram.com/venus_festpasto/",
-    "descripcion": "",
-    "coordenadas": [
-      1.2140275,
-      -77.2785096
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-80aa-8acb-d1f5216da0fa",
-    "nombre": "Pasto Capital: Gastrodiversa",
-    "tipoDeEvento": "Gastronomico",
-    "fechas": "3 al 5 de octubre",
-    "organizacion": "",
-    "redesOWeb": "https://www.instagram.com/gastrodiversa/",
-    "descripcion": "",
-    "coordenadas": [
-      1.21628,
-      -77.28908
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-80ad-b89a-ef49815be8bf",
-    "nombre": "Onomástico",
-    "tipoDeEvento": "Cultural",
-    "fechas": "24 de junio",
-    "organizacion": "Alcaldía de Pasto",
-    "redesOWeb": "",
-    "descripcion": "",
-    "coordenadas": [
-      1.21485,
-      -77.27776
-    ],
-    "municipio": "Pasto"
-  },
-  {
-    "id": "32d14702-1936-80b4-bc80-e092b5fe7306",
-    "nombre": "Galeras Rock",
-    "tipoDeEvento": "Músical",
-    "fechas": "Junio",
-    "organizacion": "Secretaría de Juventud",
-    "redesOWeb": "https://www.instagram.com/galerasrockfest/ ",
-    "descripcion": "",
-    "coordenadas": [
-      1.21485,
-      -77.27776
     ],
     "municipio": "Pasto"
   },
@@ -146,7 +34,7 @@
     "fechas": "29 de septiembre al 4 de octubre",
     "organizacion": "Fundación Quilkay",
     "redesOWeb": "https://www.instagram.com/temporadadeletras/",
-    "descripcion": "",
+    "descripcion": "Temporada de Letras es la Feria del Libro de Pasto, consolidada como el proyecto de promoción de la lectura y la escritura más significativo del departamento de Nariño. Este evento se desarrolla en formato semipresencial y reúne en un mismo espacio a escritores, ilustradores, editoriales, libreros y lectores para disfrutar de una variada oferta editorial. Además de la literatura, la feria abre sus puertas a múltiples manifestaciones artísticas como la música, la cuentería, el cine, el teatro y las artes plásticas. Inspirado en la alegría y el color del carnaval, el festival se convierte en una vibrante celebración cultural que conecta a la comunidad con el universo de los libros.",
     "coordenadas": [
       1.2140275,
       -77.2785096
@@ -158,12 +46,124 @@
     "nombre": "Carnaval del cuy",
     "tipoDeEvento": "Gastronomico",
     "fechas": "7 de enero",
-    "organizacion": "",
-    "redesOWeb": "",
-    "descripcion": "",
+    "organizacion": "Gobernación de Nariño",
+    "redesOWeb": "https://situr.narino.gov.co/eventos/carnaval-del-cuy-y-la-cultura-campesina",
+    "descripcion": "Un evento para disfrutar el exquisito plato típico nariñense, el cuy, en medio de una celebración que le hace honor a la cultura tradicional de los campesinos nariñenses y se ha consolidado como el cierre del Carnaval de Negros y Blancos",
+    "coordenadas": [
+      1.21402,
+      -77.29816
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-8010-8024-c0437500f5c1",
+    "nombre": "Arcoiris en el asfalto",
+    "tipoDeEvento": "Cultural",
+    "fechas": "28 de diciembre",
+    "organizacion": "Fundación Via Libre",
+    "redesOWeb": "https://www.arcoirisenelasfalto.com/",
+    "descripcion": "Cada ",
     "coordenadas": [
       1.2140275,
       -77.2785096
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-80a4-b8f0-fee4d0057a8d",
+    "nombre": "Venus Fest",
+    "tipoDeEvento": "Músical",
+    "fechas": "24 al 30 de noviembre",
+    "organizacion": "Venus Fest",
+    "redesOWeb": "https://www.instagram.com/venus_festpasto/",
+    "descripcion": "El Venus Fest es una apuesta que nace desde el movimiento, la autogestión y el abrazo colectivo.\nUn lugar donde mujeres y disidencias tejemos otros mundos posibles a través del encuentro, la palabra, la música, la danza y las historias que nos hacen persistir.",
+    "coordenadas": [
+      1.2140275,
+      -77.2785096
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-802b-8a08-db55791f6163",
+    "nombre": "Pasto en salsa",
+    "tipoDeEvento": "Músical",
+    "fechas": "24 de junio",
+    "organizacion": "Alcaldía de Pasto",
+    "redesOWeb": "",
+    "descripcion": "un evento masivo y completamente gratuito que se toma la emblemática Plaza de Nariño en el marco del tradicional Onomástico de la ciudad. Esta celebración se convierte en el punto de encuentro perfecto para que locales y visitantes disfruten del baile, la energía de las orquestas y la riqueza cultural en el espacio público más importante de la región.",
+    "coordenadas": [
+      1.21485,
+      -77.27776
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-80ad-b89a-ef49815be8bf",
+    "nombre": "Onomástico",
+    "tipoDeEvento": "Cultural",
+    "fechas": "24 de junio",
+    "organizacion": "Alcaldía de Pasto",
+    "redesOWeb": "",
+    "descripcion": "Esta festividad cívica y cultural rinde homenaje al santo patrono de la ciudad a través de una agenda diversa y vibrante organizada por la alcaldía local. Durante varios días, el espacio público se llena de vida con actos religiosos solemnes, misas conmemorativas y una gran programación cultural. Los asistentes pueden disfrutar de conciertos masivos, ferias gastronómicas que resaltan la cocina tradicional de la región y muestras artesanales que exhiben todo el talento local. Es una celebración que une las costumbres religiosas con el entretenimiento, convirtiéndose en el escenario perfecto para que propios y visitantes experimenten de cerca la identidad, la alegría y la riqueza comunitaria de Pasto.",
+    "coordenadas": [
+      1.21485,
+      -77.27776
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-808e-8606-e1f59cde0a0e",
+    "nombre": "Festival internacional de teatro",
+    "tipoDeEvento": "Teatro",
+    "fechas": "1 al 7 de septiembre",
+    "organizacion": "Aleph Teatro",
+    "redesOWeb": "https://www.facebook.com/festivalinternacionaldeteatrodepasto/?locale=es_LA",
+    "descripcion": "Este festival de gran trayectoria reúne a destacados artistas nacionales e internacionales en una diversidad de espectáculos dedicados a las artes escénicas, la dramaturgia y la oralidad. Durante varios días consecutivos, el teatro se toma las salas, auditorios y parques de la ciudad, abriendo espacios accesibles para que todos los públicos disfruten del talento en escena. Más allá de las funciones, el evento fomenta la formación cultural y el diálogo ciudadano a través de talleres, tertulias y conversatorios con maestros invitados, convirtiéndose en un motor de unión para la comunidad. Respaldado por el Ministerio de Cultura, es una celebración que transforma el entorno urbano en un escenario vivo de creatividad.",
+    "coordenadas": [
+      1.21908,
+      -77.28435
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-8082-ad56-ec6f79234254",
+    "nombre": "Carnaval de negros y blancos",
+    "tipoDeEvento": "Carnaval",
+    "fechas": "2 al 7 de enero",
+    "organizacion": "Alcaldía de Pasto",
+    "redesOWeb": "https://corpocarnaval.com/",
+    "descripcion": "El Carnaval de Negros y Blancos es la festividad más grande e importante del suroccidente colombiano, declarada Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO. Este magno evento transforma las calles de Pasto en un desborde de alegría, arte masivo y juego colectivo. La ciudad se llena de color con imponentes carrozas gigantes, murgas tradicionales y comparsas de danzantes que exhiben la increíble destreza plástica y creativa de los artesanos locales. A través del juego con cosmético, talco y espuma, locales y turistas se fusionan en una sola identidad festiva sin distinciones. Es una experiencia sensorial única que celebra la diversidad y la convivencia a través de la música, el folclor y la lúdica popular.",
+    "coordenadas": [
+      1.21099,
+      -77.27802
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-80aa-8acb-d1f5216da0fa",
+    "nombre": "Pasto Capital: Gastrodiversa",
+    "tipoDeEvento": "Gastronomico",
+    "fechas": "3 al 5 de octubre",
+    "organizacion": "ACOPI Nariño",
+    "redesOWeb": "https://www.instagram.com/gastrodiversa/",
+    "descripcion": "Este evento se consolida como el encuentro gastronómico más grande de Nariño, uniendo la cocina, el turismo, las artesanías, la música y la cultura en un solo espacio. El festival es una vitrina excepcional para la riqueza culinaria de la región, donde las cocinas tradicionales y las propuestas contemporáneas deleitan el paladar de locales y visitantes. Más allá de la comida, el espacio ofrece una experiencia integral con coloridas muestras de artesanos locales, promoción de destinos turísticos regionales y presentaciones musicales en vivo. Es la cita perfecta para descubrir la identidad nariñense a través de sus sabores, apoyar el talento local y disfrutar de un ambiente festivo que exalta la diversidad del departamento.",
+    "coordenadas": [
+      1.21628,
+      -77.28908
+    ],
+    "municipio": "Pasto"
+  },
+  {
+    "id": "32d14702-1936-80b4-bc80-e092b5fe7306",
+    "nombre": "Galeras Rock",
+    "tipoDeEvento": "Músical",
+    "fechas": "Junio",
+    "organizacion": "Secretaría de Juventud",
+    "redesOWeb": "https://www.instagram.com/galerasrockfest/ ",
+    "descripcion": "Este evento se consolida como uno de los festivales públicos más importantes de Colombia y la plataforma de música alternativa más destacada del suroccidente del país. Bajo el lema #CrecimosConCadaVoz, el festival ofrece un espacio vibrante para el encuentro juvenil, la diversidad cultural y el impulso al talento emergente. Escenario de géneros que van desde el rock y el metal hasta el hip-hop, el reggae y las fusiones contemporáneas, esta gran fiesta musical reúne a miles de apasionados en torno a la convivencia y la potencia de los sonidos independientes locales, nacionales e internacionales, convirtiendo la plaza pública en un espectáculo en vivo lleno de energía.",
+    "coordenadas": [
+      1.21485,
+      -77.27776
     ],
     "municipio": "Pasto"
   }
