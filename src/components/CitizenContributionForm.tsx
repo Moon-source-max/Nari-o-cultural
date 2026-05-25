@@ -97,6 +97,8 @@ const validationSchema = Yup.object().shape({
   }).required('La ubicación es obligatoria')
 });
 
+import InteractiveButton from './InteractiveButton';
+
 export default function CitizenContributionForm({ isOpen, onClose, tiposDeEvento }: CitizenContributionFormProps) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -385,10 +387,11 @@ export default function CitizenContributionForm({ isOpen, onClose, tiposDeEvento
                     >
                       Cancelar
                     </button>
-                    <button
+                    <InteractiveButton
                       type="submit"
                       disabled={isSubmitting}
-                      className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 flex items-center"
+                      color="var(--color-vibrant-blue)"
+                      className="px-6 flex items-center min-h-[40px] !text-sm"
                     >
                       {isSubmitting ? (
                         <>
@@ -399,7 +402,7 @@ export default function CitizenContributionForm({ isOpen, onClose, tiposDeEvento
                           Enviando...
                         </>
                       ) : 'Enviar evento'}
-                    </button>
+                    </InteractiveButton>
                   </div>
                 </Form>
               )}

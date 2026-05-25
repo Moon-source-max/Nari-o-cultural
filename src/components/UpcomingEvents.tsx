@@ -24,6 +24,8 @@ interface UpcomingEventsProps {
   onSelectItem: (item: UserEvent) => void;
 }
 
+import InteractiveButton from './InteractiveButton';
+
 export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
   const [events, setEvents] = useState<UserEvent[]>([]);
   const [loading, setLoading] = useState(true);
@@ -142,12 +144,13 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
                     </div>
                   )}
                 </div>
-                <button 
+                <InteractiveButton 
                   onClick={() => onSelectItem(event)}
-                  className="mt-5 w-full py-2.5 text-sm font-bold text-white bg-[var(--color-earth-terra)] border border-[var(--color-earth-terra)] rounded-xl hover:bg-[#c95945] transition-colors"
+                  color="var(--color-earth-terra)"
+                  className="mt-5 w-full py-2.5"
                 >
                   Ver detalles completos
-                </button>
+                </InteractiveButton>
               </div>
               
               {event.redesOWeb && (

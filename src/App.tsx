@@ -62,6 +62,8 @@ const LayeredIcon = ({ icon: Icon, className = "w-6 h-6", color1 = "text-[var(--
 import PassportGrid from './components/PassportGrid';
 import CalendarView from './components/CalendarView';
 
+import InteractiveButton from './components/InteractiveButton';
+
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<'landing' | 'app'>('landing');
   const [activeTab, setActiveTab] = useState<'eventos' | 'espacios' | 'pasaporte'>('eventos');
@@ -136,25 +138,31 @@ export default function App() {
     return (
       <div className="flex flex-col h-[100dvh] bg-[var(--color-vibrant-cream)] items-center justify-center p-6 font-sans">
         <div className="w-full max-w-sm flex flex-col items-center">
-          <div className="bg-white rounded-3xl p-6 text-center mb-8 w-full shadow-sm flex flex-col items-center justify-center">
-            <img src="/icons/nari-cultural/logo-cuadrado.svg" alt="Nariño Cultural Logo" className="w-48 h-auto mb-4" />
-            <h1 className="text-2xl md:text-3xl font-bold text-[var(--color-vibrant-blue)]">
-              ¿Qué quieres ver?
-            </h1>
-          </div>
-          <div className="flex w-full gap-4">
-            <button 
-              onClick={() => { setActiveTab('eventos'); setCurrentScreen('app'); }}
-              className="flex-1 bg-[var(--color-vibrant-coral)] text-white py-3 rounded-2xl text-lg font-bold shadow-md active:scale-95 transition-transform border-b-4 border-b-[#c95945]"
-            >
-              Eventos
-            </button>
-            <button 
+          <img src="/icons/nari-cultural/logo-cuadrado.svg" alt="Nariño Cultural Logo" className="w-64 md:w-72 h-auto mb-6 hover:scale-105 transition-transform duration-500 delay-100" />
+          
+          <h2 className="text-[var(--color-vibrant-blue)] text-sm md:text-base font-bold text-center mb-10 tracking-tight">
+            Conoce la diversidad cultural del departamento
+          </h2>
+
+          <div className="flex w-full gap-3">
+            <InteractiveButton 
               onClick={() => { setActiveTab('espacios'); setCurrentScreen('app'); }}
-              className="flex-1 bg-white border-[3px] border-[var(--color-vibrant-coral)] text-[var(--color-vibrant-purple)] py-3 rounded-2xl text-lg font-bold shadow-sm active:scale-95 transition-transform"
+              className="flex-1 text-[13px] md:text-sm py-3.5"
+              color="var(--color-vibrant-orange)"
             >
-              Sitios de interes
-            </button>
+              Explora el mapa
+            </InteractiveButton>
+            <InteractiveButton 
+              onClick={() => { 
+                setEventTypeFilter('proximos');
+                setActiveTab('eventos'); 
+                setCurrentScreen('app'); 
+              }}
+              className="flex-1 text-[13px] md:text-sm py-3.5"
+              color="var(--color-vibrant-cyan)"
+            >
+              Eventos proximos
+            </InteractiveButton>
           </div>
         </div>
       </div>
@@ -213,22 +221,24 @@ export default function App() {
           
           <div className="hidden md:flex gap-2">
             {activeTab === 'espacios' && (
-              <button
+              <InteractiveButton
                 onClick={() => setIsSpaceFormOpen(true)}
-                className="bg-[var(--color-vibrant-mint)] hover:brightness-95 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors flex items-center shrink-0 shadow-sm min-h-[44px]"
+                color="var(--color-vibrant-mint)"
+                className="text-sm shadow-sm min-h-[44px]"
               >
-                <Plus className="w-4 h-4 mr-2" />
+                <Plus className="w-4 h-4" />
                 <span>Añadir espacio</span>
-              </button>
+              </InteractiveButton>
             )}
             {activeTab === 'eventos' && (
-              <button
+              <InteractiveButton
                 onClick={() => setIsFormOpen(true)}
-                className="bg-[var(--color-vibrant-coral)] hover:brightness-95 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors flex items-center shrink-0 shadow-sm min-h-[44px]"
+                color="var(--color-vibrant-coral)"
+                className="text-sm shadow-sm min-h-[44px]"
               >
-                <Plus className="w-4 h-4 mr-2" />
+                <Plus className="w-4 h-4" />
                 <span>¿Tienes un evento?</span>
-              </button>
+              </InteractiveButton>
             )}
           </div>
         </div>
@@ -344,17 +354,18 @@ export default function App() {
                                   </div>
                                 )}
                               </div>
-                              <button 
+                              <InteractiveButton 
                                 onClick={() => {
                                   if (evento.coordenadas) {
                                     setFocusLocation(evento.coordenadas);
                                   }
                                   setSelectedItem({ ...evento, type: 'evento' });
                                 }}
-                                className="mt-4 w-full min-h-[44px] py-2 text-sm font-bold text-[var(--color-vibrant-purple)] border-2 border-[var(--color-vibrant-mint)] rounded-xl hover:bg-[var(--color-vibrant-mint)]/20 transition-colors"
+                                color="var(--color-vibrant-mint)"
+                                className="mt-4 w-full"
                               >
                                 Ver detalles
-                              </button>
+                              </InteractiveButton>
                             </div>
                           ))
                         ) : (
@@ -378,9 +389,10 @@ export default function App() {
               {/* Filters for Espacios */}
               {/* Mobile Filter Toggle */}
               <div className="md:hidden absolute top-4 left-0 right-0 flex justify-center z-20 pointer-events-none">
-                 <button 
+                 <InteractiveButton 
                     onClick={() => setIsFiltersOpen(true)}
-                    className="pointer-events-auto bg-[var(--color-vibrant-yellow)] shadow-md px-6 py-3 rounded-full flex items-center gap-2 text-sm font-bold text-[var(--color-vibrant-blue)] border border-[var(--color-vibrant-mint)] hover:scale-105 transition-transform"
+                    color="var(--color-vibrant-yellow)"
+                    className="pointer-events-auto px-6 py-3 flex items-center gap-2 text-sm !text-[var(--color-vibrant-blue)] border border-[var(--color-vibrant-mint)] hover:scale-105"
                  >
                     <Filter className="w-4 h-4 text-[var(--color-vibrant-purple)]" /> Filtrar Lugares
                     {(tipoEspacio.length > 0 || tipoPlan.length > 0 || disciplina.length > 0) && (
@@ -388,7 +400,7 @@ export default function App() {
                           {tipoEspacio.length + tipoPlan.length + disciplina.length}
                        </span>
                     )}
-                 </button>
+                 </InteractiveButton>
               </div>
 
               {/* Backdrop for mobile */}
@@ -530,15 +542,16 @@ export default function App() {
 
                 {/* Apply Button */}
                 <div className="p-4 bg-white border-t border-gray-100 md:hidden pb-[max(env(safe-area-inset-bottom),16px)]">
-                  <button 
+                  <InteractiveButton 
                     onClick={() => setIsFiltersOpen(false)} 
-                    className="w-full bg-[var(--color-vibrant-coral)] text-white rounded-full py-3 text-sm font-bold flex items-center justify-center gap-2 shadow-md"
+                    color="var(--color-vibrant-coral)"
+                    className="w-full py-3 text-sm flex items-center justify-center gap-2"
                   >
                     Aplicar Filtros
                     <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-xs">
                       {filteredPlaces.length}
                     </span>
-                  </button>
+                  </InteractiveButton>
                 </div>
               </div>
             </>
@@ -610,21 +623,23 @@ export default function App() {
       {activeTab !== 'pasaporte' && (
         <div className="md:hidden fixed bottom-[90px] right-4 z-50">
           {activeTab === 'espacios' ? (
-            <button
+            <InteractiveButton
               onClick={() => setIsSpaceFormOpen(true)}
-              className="bg-[var(--color-vibrant-mint)] border border-white hover:brightness-95 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-95"
+              color="var(--color-vibrant-mint)"
+              className="w-14 h-14 !p-0 shadow-lg flex items-center justify-center border border-white"
               aria-label="Añadir espacio"
             >
               <Plus className="w-6 h-6 text-white" />
-            </button>
+            </InteractiveButton>
           ) : (
-            <button
+            <InteractiveButton
               onClick={() => setIsFormOpen(true)}
-              className="bg-[var(--color-vibrant-coral)] border border-white hover:brightness-95 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-95"
+              color="var(--color-vibrant-coral)"
+              className="w-14 h-14 !p-0 shadow-lg flex items-center justify-center border border-white"
               aria-label="Añadir evento"
             >
               <Plus className="w-6 h-6" />
-            </button>
+            </InteractiveButton>
           )}
         </div>
       )}

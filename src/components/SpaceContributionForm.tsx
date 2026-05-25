@@ -123,6 +123,8 @@ const compressImage = (file: File): Promise<string> => {
   });
 };
 
+import InteractiveButton from './InteractiveButton';
+
 export default function SpaceContributionForm({ isOpen, onClose, tiposDeEspacio, tiposDePlan, disciplinas }: SpaceContributionFormProps) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -479,13 +481,14 @@ export default function SpaceContributionForm({ isOpen, onClose, tiposDeEspacio,
                     >
                       Cancelar
                     </button>
-                    <button
+                    <InteractiveButton
                       type="submit"
                       disabled={isSubmitting}
-                      className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                      color="var(--color-vibrant-mint)"
+                      className="px-6 flex items-center min-h-[40px] !text-sm"
                     >
                       {isSubmitting ? 'Enviando...' : 'Enviar espacio'}
-                    </button>
+                    </InteractiveButton>
                   </div>
                 </Form>
               )}
