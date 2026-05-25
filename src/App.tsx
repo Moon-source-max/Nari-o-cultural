@@ -173,9 +173,9 @@ export default function App() {
     <div className="flex flex-col h-[100dvh] bg-[var(--color-vibrant-cream)] font-sans pb-[80px] md:pb-0 overflow-hidden">
       {/* Header */}
       <header className="bg-white shadow-sm px-6 py-4 flex flex-col md:flex-row md:items-center justify-between z-10 gap-4 border-b border-gray-100">
-        <div className="flex items-center gap-4">
-          <img src="/icons/nari-cultural/logo-horizontal.svg" alt="Nariño Cultural" className="h-10 md:h-12 object-contain" />
-          <span className="hidden lg:block text-[var(--color-vibrant-blue)] font-bold text-sm tracking-tight opacity-80">
+        <div className="flex items-center">
+          <img src="/icons/nari-cultural/logo-horizontal.svg" alt="Nariño Cultural" className="max-h-10 md:max-h-12 w-auto object-contain shrink-0" />
+          <span className="ml-3 md:ml-4 text-gray-700 font-medium text-xs md:text-base tracking-tight leading-tight">
             Conoce la diversidad cultural del departamento
           </span>
         </div>

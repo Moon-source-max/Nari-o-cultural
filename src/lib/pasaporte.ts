@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 
 export interface Trofeo {
@@ -37,6 +37,13 @@ export const TROFEOS: Trofeo[] = [
   { id: 'ciudadano',    nombre: 'Ciudadano cultural',   descripcion: 'Asiste a 5 eventos',            icono: '⭐', req: 5,  xp: 80 },
   { id: 'leyenda',      nombre: 'Leyenda local',        descripcion: 'Asiste a 10 eventos',           icono: '🌟', req: 10, xp: 150 },
 ];
+
+export async function resetPasaporte(userId: string): Promise<Pasaporte> {
+  const ref = doc(db, 'pasaportes', userId);
+  const nuevo: Pasaporte = { userId, xp: 0, eventosAsistidos: [], trofeosGanados: [] };
+  await setDoc(ref, nuevo);
+  return nuevo;
+}
 
 export async function getPasaporte(userId: string): Promise<Pasaporte> {
   const ref = doc(db, 'pasaportes', userId);
@@ -85,4 +92,15 @@ export async function registrarAsistencia(
     pasaporteActualizado: { ...pasaporte, xp: xpTotal, eventosAsistidos: asistenciasActualizadas, trofeosGanados: trofeosGanadosActualizados },
     trofeosNuevos,
   };
+}
+
+export function subscribeToPasaporte(userId: string, callback: (p: Pasaporte) => void): () => void {
+  const ref = doc(db, 'pasaportes', userId);
+  return onSnapshot(ref, (snap) => {
+    if (snap.exists()) {
+      callback(snap.data() as Pasaporte);
+    } else {
+      getPasaporte(userId).then(callback);
+    }
+  });
 }

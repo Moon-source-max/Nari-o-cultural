@@ -130,8 +130,8 @@ export default function DetailModal({ item, onClose }: DetailModalProps) {
           </div>
 
           {/* Footer / Action */}
-          {(isEvento ? item.redesOWeb : item.contacto) && (
-            <div className="p-4 bg-gray-50 border-t border-gray-100 shrink-0">
+          <div className="flex flex-col gap-2 p-4 bg-gray-50 border-t border-gray-100 shrink-0">
+            {(isEvento ? item.redesOWeb : item.contacto) && (
               <a 
                 href={isEvento ? item.redesOWeb : item.contacto} 
                 target="_blank" 
@@ -145,8 +145,8 @@ export default function DetailModal({ item, onClose }: DetailModalProps) {
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Ver más información oficial
               </a>
-            </div>
-          )}
+            )}
+          </div>
         </motion.div>
       </div>
     </AnimatePresence>
