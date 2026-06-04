@@ -80,17 +80,17 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
     return (
       <div className="p-12 text-center text-gray-500 flex flex-col items-center justify-center h-full">
         <Calendar className="w-16 h-16 mb-4 text-gray-300" />
-        <h3 className="text-xl font-medium text-[var(--color-earth-coffee)] mb-2">No hay eventos próximos</h3>
+        <h3 className="text-xl font-medium text-[var(--color-vibrant-blue)] mb-2">No hay eventos próximos</h3>
       </div>
     );
   }
 
   return (
-    <div className="p-6 overflow-y-auto h-full bg-[#fdfaf6]">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="p-4 md:p-6 min-h-full bg-[var(--color-vibrant-cream)] flex flex-col">
+      <div className="max-w-4xl mx-auto space-y-6 flex-1 w-full">
         <div className="grid gap-6 md:grid-cols-2">
           {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-xl shadow-sm border border-[var(--color-earth-sage)] overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+            <div key={event.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
               {event.imagenPromocional && (
                 <div className="w-full h-48 bg-gray-100 relative overflow-hidden shrink-0">
                   <img 
@@ -103,9 +103,9 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
               )}
               <div className="p-6 flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold text-[var(--color-earth-coffee)] line-clamp-2">{event.nombre}</h3>
+                  <h3 className="text-xl font-bold text-[var(--color-vibrant-blue)] line-clamp-2">{event.nombre}</h3>
                   {event.tipoDeEvento && (
-                    <span className="bg-[var(--color-earth-sage)]/20 text-[var(--color-earth-wine)] text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap ml-2 border border-[var(--color-earth-sage)]/50">
+                    <span className="bg-[var(--color-vibrant-mint)]/20 text-[var(--color-vibrant-blue)] text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap ml-2 border border-[var(--color-vibrant-mint)]/50">
                       {event.tipoDeEvento}
                     </span>
                   )}
@@ -117,8 +117,8 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
                 
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex items-start">
-                    <Clock className="w-4 h-4 mr-2 text-[var(--color-earth-terra)] shrink-0 mt-0.5" />
-                    <span className="font-medium text-[var(--color-earth-coffee)]">
+                    <Clock className="w-4 h-4 mr-2 text-[var(--color-vibrant-orange)] shrink-0 mt-0.5" />
+                    <span className="font-medium text-[var(--color-vibrant-blue)]">
                       {format(parseISO(event.fechaInicio), "d 'de' MMMM, yyyy - h:mm a", { locale: es })}
                       {event.fechaFin && (
                         <>
@@ -132,7 +132,7 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
                   <div className="flex items-start">
                     <MapPin className="w-4 h-4 mr-2 text-gray-400 shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-medium text-[var(--color-earth-coffee)]">{event.municipio}</span>
+                      <span className="font-medium text-[var(--color-vibrant-blue)]">{event.municipio}</span>
                       {event.direccion && <span className="block text-gray-500 text-xs mt-0.5">{event.direccion}</span>}
                     </div>
                   </div>
@@ -146,7 +146,7 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
                 </div>
                 <InteractiveButton 
                   onClick={() => onSelectItem(event)}
-                  color="var(--color-earth-terra)"
+                  color="var(--color-vibrant-coral)"
                   className="mt-5 w-full py-2.5"
                 >
                   Ver detalles completos
@@ -159,7 +159,7 @@ export default function UpcomingEvents({ onSelectItem }: UpcomingEventsProps) {
                     href={event.redesOWeb} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-[var(--color-earth-wine)] hover:text-[#53272e] text-sm font-medium flex items-center"
+                    className="text-[var(--color-vibrant-blue)] hover:text-blue-800 text-sm font-medium flex items-center"
                   >
                     <ExternalLink className="w-4 h-4 mr-1" />
                     Más información

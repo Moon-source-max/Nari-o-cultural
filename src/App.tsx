@@ -172,10 +172,10 @@ export default function App() {
   return (
     <div className="flex flex-col h-[100dvh] bg-[var(--color-vibrant-cream)] font-sans pb-[80px] md:pb-0 overflow-hidden">
       {/* Header */}
-      <header className="bg-white shadow-sm px-6 py-4 flex flex-col md:flex-row md:items-center justify-between z-10 gap-4 border-b border-gray-100">
-        <div className="flex items-center">
+      <header className="bg-white shadow-sm px-4 md:px-6 py-3 md:py-4 flex flex-col md:flex-row md:items-center justify-between z-10 gap-0 md:gap-4 border-b border-gray-100">
+        <div className="flex items-center pb-2 md:pb-0">
           <img src="/icons/nari-cultural/logo-horizontal.svg" alt="Nariño Cultural" className="max-h-10 md:max-h-12 w-auto object-contain shrink-0" />
-          <span className="ml-3 md:ml-4 text-gray-700 font-medium text-xs md:text-base tracking-tight leading-tight">
+          <span className="ml-2 md:ml-4 text-gray-700 font-medium text-xs md:text-base tracking-tight leading-tight pt-1">
             Conoce la diversidad cultural del departamento
           </span>
         </div>
@@ -208,9 +208,9 @@ export default function App() {
           </button>
         </div>
 
-        <div className="flex items-center gap-3 w-full md:w-auto">
+        <div className="hidden md:flex items-center gap-3 w-auto">
           {activeTab !== 'pasaporte' && (
-            <div className="relative flex-1 md:w-64 hidden md:block">
+            <div className="relative flex-1 md:w-64">
               <input 
                 type="text" 
                 placeholder={activeTab === 'eventos' ? "Buscar eventos..." : "Buscar espacios..."}
@@ -222,7 +222,7 @@ export default function App() {
             </div>
           )}
           
-          <div className="hidden md:flex gap-2">
+          <div className="flex gap-2">
             {activeTab === 'espacios' && (
               <InteractiveButton
                 onClick={() => setIsSpaceFormOpen(true)}
@@ -289,7 +289,7 @@ export default function App() {
                       />
                     </div>
                   ) : eventTypeFilter === 'proximos' ? (
-                    <div className="flex-1 overflow-x-hidden overflow-y-auto pb-24 md:pb-0">
+                    <div className="flex-1 overflow-x-hidden overflow-y-auto bg-[var(--color-vibrant-cream)] pb-24 md:pb-0">
                       <UpcomingEvents onSelectItem={(item) => setSelectedItem({ ...item, type: 'evento', nombre_evento: item.nombre })} />
                     </div>
                   ) : (
