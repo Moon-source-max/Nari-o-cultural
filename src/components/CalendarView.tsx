@@ -69,7 +69,7 @@ function parseFechaString(fechasStr: string | undefined): { start: Date, end: Da
 
 export default function CalendarView({ permanentes, proximos, onSelectItem }: CalendarViewProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   
   const next = () => setCurrentDate(isExpanded ? addMonths(currentDate, 1) : addWeeks(currentDate, 1));
   const prev = () => setCurrentDate(isExpanded ? subMonths(currentDate, 1) : subWeeks(currentDate, 1));
